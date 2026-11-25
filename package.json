@@ -1,0 +1,11 @@
+{
+  "name": "portfolio-research-lab",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node server.mjs",
+    "check": "node --test checks.mjs"
+  },
+  "engines": { "node": ">=20" }
+}

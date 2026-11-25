@@ -1,0 +1,48 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Explore portfolio performance, allocation and risk with your own monthly data.">
+  <title>Portfolio Research Lab</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script type="module" src="/src/app.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="/" aria-label="Portfolio Research Lab home"><span class="mark" aria-hidden="true">▥</span><span>Portfolio <strong>Research Lab</strong></span></a>
+    <div class="top-actions"><span id="data-badge" class="pill"></span><button id="theme" class="button quiet" type="button">Dark mode</button><button id="workspace-toggle" class="button" type="button">Workspace</button></div>
+  </header>
+  <div class="shell">
+    <aside class="sidebar" aria-label="Analysis navigation">
+      <label class="nav-filter">Find a tool<input id="tool-search" type="search" placeholder="Search tools"></label>
+      <nav id="navigation"></nav>
+    </aside>
+    <main id="main">
+      <div id="print-brand" hidden></div>
+      <div class="hero"><p id="section" class="eyebrow"></p><h1 id="heading"></h1><p id="description"></p></div>
+      <details id="settings-panel" class="panel settings" open>
+        <summary>Analysis settings</summary>
+        <form id="model-form">
+          <div id="model-fields" class="fields"></div>
+          <details id="advanced-panel">
+            <summary>Advanced settings</summary>
+            <label for="advanced">Additional options as JSON</label>
+            <p id="advanced-hint" class="muted"></p>
+            <textarea id="advanced" rows="7" spellcheck="false" aria-describedby="advanced-hint"></textarea>
+          </details>
+          <div class="actions"><button type="submit" class="button primary">Run analysis</button><button type="button" id="save-model" class="button">Save model</button></div>
+        </form>
+      </details>
+      <div id="status" class="status muted" role="status"></div>
+      <section id="results" aria-label="Analysis results"></section>
+    </main>
+  </div>
+  <dialog id="workspace">
+    <div class="dialog-top"><h2>Workspace</h2><button type="button" id="close-workspace" class="button">Close</button></div>
+    <div id="workspace-body"></div>
+    <p id="workspace-status" class="status" role="status"></p>
+  </dialog>
+</body>
+</html>
